@@ -1,0 +1,9 @@
+FROM <<docker_image>>
+
+# Add Jupyter to the image. 
+COPY jupyter_and/jupyter_and.sh /jupyter_and.sh
+RUN chmod +x /jupyter_and.sh
+RUN pip3 install jupyter
+
+ENTRYPOINT [ "/jupyter_and.sh" <<entrypoint>> ]
+<<cmd>>

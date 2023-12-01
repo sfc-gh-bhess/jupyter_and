@@ -1,0 +1,10 @@
+DOCKER_IMAGE=<<new_image>>
+
+help:           ## Show this help.
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+
+build_local:  ## Build Docker image for local environment
+	docker build -t $(DOCKER_IMAGE)_local .
+
+run:  ## Run local Docker image - you will want to edit this appropriately
+	docker run -p 4200:4200 $(DOCKER_IMAGE)_local 
