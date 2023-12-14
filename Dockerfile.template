@@ -1,5 +1,6 @@
 FROM <<docker_image>>
 
+EXPOSE 4200
 # Add Jupyter to the image. 
 COPY jupyter_and/jupyter_and.sh /jupyter_and.sh
 RUN chmod +x /jupyter_and.sh
